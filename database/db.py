@@ -62,7 +62,7 @@ def get_all_videos():
     """Obtener todos los videos ordenados por fecha de creación"""
     with get_db_connection() as conn:
         cursor = conn.cursor()
-        cursor.exectute(
+        cursor.exetute(
             """
             SELECT id, created_at
             FROM videos
