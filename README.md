@@ -6,6 +6,17 @@ Sistema de monitoreo automatizado para perfiles de TikTok que alerta vía Telegr
 
 Este programa monitorea continuamente un perfil específico de TikTok y envía alertas a través de un bot de Telegram cuando se publican nuevos videos. Utiliza Playwright para automatizar la navegación y mantener una sesión persistente.
 
+## Entorno Virtual
+
+`python -m venv .venv`
+`source .venv/bin/activate`  # Linux/Mac
+# o
+`.venv\Scripts\activate`  # Windows`
+
+## Instala dependencias
+`pip install -r requirements.txt`
+`playwright install chromium`
+
 ## Instalación
 
 1. Clonar el repositorio:
