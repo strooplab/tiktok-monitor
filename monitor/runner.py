@@ -14,11 +14,12 @@ def run_monitor():
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(storage_state=str(SESSION_FILE))
         while True:
-            videos = get_latest_videos(browser, context)
+            videos = get_latest_videos(context)
 
             for video in videos:
                 if not videos_exists(video):
                     save_video(video)
                     send_alert(f"Alerta! se ha encontrado un video nuevo de {TIKTOK_USERNAME}, id: {video}")
             time.sleep(10)
+        browser.close()
 
