@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TikTok Monitor</title>
+</head>
+<body>
+    <h1>TikTok Monitor</h1>
+
+    <h2>Configuración</h2>
+    <form action="/save" method="post">
+      <input type="text" name="username" placeholder="Usuario TikTok" required>
+      <input type="text" name="telegram_token" placeholder="Telegram Token" required>
+      <input type="text" name="chat_id" placeholder="Chat ID" required>
+      <button type="submit">Guardar</button>
+    </form>
+    <form action="/setup" method="post">
+      <button type="submit">Configurar sesión TikTok</button>
+    </form>
+    {% if config %}
+        <p>Usuario actual: <strong>{{ config.tiktok_username }}</strong></p>
+    {% endif %}
+
+    <h2>Monitor</h2>
+    {% if running %}
+        <p style="color:green;">Monitor activo</p>
+    {% else %}
+        <form action="/start" method="post">
+            <button type="submit">Iniciar monitor</button>
+        </form>
+    {% endif %}
+
+    <h2>Videos detectados</h2>
+    <ul>
+        {% for video in videos %}
+            <li>{{ video }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

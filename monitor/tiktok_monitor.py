@@ -1,5 +1,15 @@
 from playwright.sync_api import sync_playwright
 from config import TIKTOK_USERNAME
+from pathlib import Path
+import json
+
+CONFIG_FILE = Path("config.json")
+def get_username():
+    if not CONFIG_FILE.exists():
+        return None
+    with open(CONFIG_FILE) as f:
+        return json.load(f)["tiktok_username"]
+
 
 def get_latest_videos(context, max_videos: int = 5) -> list:
     """
@@ -13,7 +23,7 @@ def get_latest_videos(context, max_videos: int = 5) -> list:
         Lista de IDs de videos únicos
     """
     videos = []
-    
+    TIKTOK_USERNAME = get_username()
     try:
         page = context.new_page()
             
