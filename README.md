@@ -17,16 +17,16 @@ o
 ```
 
 ## Instala dependencias
-`pip install -r requirements.txt`
-`playwright install chromium`
+```bash 
+pip install -r requirements.txt
+playwright install chromium
+```
 
 ## Instalación
 ### 1. Clonar el repositorio:
 ```bash
 git clone https://github.com/strooplab/tiktok-monitor.git
 cd tiktok-monitor
-```
-```
 ```
 ### 2. Setup
 Ejecutar:
@@ -41,7 +41,7 @@ Ejecutar:
 ```bash
 python main.py
 ```
-El runner comenzará a buscar videos, en caso de encontrar uno nuevo 
+El runner comenzará a buscar videos, en caso de encontrar uno nuevo, 
 su bot de telegram enviará una alerta indicandole el id del video
 
 ## Proyecto en desarrollo, fases de producción:
